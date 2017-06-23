@@ -1,0 +1,119 @@
+
+ <% include navbar.ejs%>
+
+<div id="questionSection">
+    <div id ='questionTitle'>
+        <p><%= question.title %></p>
+        <p><%= question.description %></p>
+
+    </div>
+    <div id="questionTips">
+        <p>关注者 被浏览</p>
+        <button>关注问题</button>
+        <a href="#editAnswer">写回答</a>
+    </div>
+
+</div>
+
+
+<div id="questionPageSidebar">
+    <div>
+        <img src="" placeHolder="广告"/>
+
+    </div>
+    <div>
+        <p>相关问题</p>
+        <ul>
+            <li>有哪些不起眼却非常挣钱的行业</li>
+            <li>你在大学里是怎么样正道钱的</li>
+        </ul>
+        <p>有哪些不起眼却非常挣钱的行业</p>
+    </div>
+    <div>
+        <p>相关Live推荐</p>
+        <ul>
+            <li>单独主编，一本杂志的诞生</li>
+            <li>单独主编，一本杂志的诞生</li>
+            <li>单独主编，一本杂志的诞生</li>
+        </ul>
+        <div>
+            <p>
+                刘看山，知乎指南知乎协议应用工作联系我们@2017知乎
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div id="answers">
+
+    <div  >
+
+        <ul>
+
+            <% if(question.answers){ %>
+            <% for(var answer of question.answers){ %>
+            <li class="questionItem" >
+                <div> <span>回答者： <%= answer.replier %></span> </div>
+                <div >
+
+                    <div class="answerDetail">
+                        <span><%= answer.content %></span>
+                    </div>
+
+                    <div class="readmore"></div>
+
+                </div>
+                <div class="answerfooter">
+
+                    <a href='#' class="comment"><%=answer.comments.length%>条评论</a>
+
+                    <span ><a>分享</a> <a>感谢</a> </span>
+
+                </div>
+                <div class="commentsSection" >
+                    <div class="comments">
+                        <ul>
+
+                            <% for(var comment of answer.comments){ %>
+                            <li>
+                                <div><span>评论者：<%= comment.commentor%></span></div>
+                                <div>
+                                    <span>评论内容：<%= comment.commentContent%></span>
+                                </div>
+                            </li>
+                            <% } %>
+
+                        </ul>
+                    </div>
+                    <div class="editComment">
+
+                            <textarea class="commentContent"></textarea><br>
+                            <input class='whichAnswer' type="hidden" value=<%=answer.replier%>>
+                            <button class="clickComment">评论</button>
+
+                    </div>
+
+                </div>
+
+
+
+            </li>
+            <%}%>
+            <% }%>
+        </ul>
+    </div>
+
+
+    <div id="editAnswer">
+        <form action="/answer" method="post">
+        <textarea name="answer"></textarea><br>
+            <input type="submit" value='提交答案'>
+        </form>
+    </div>
+</div>
+
+
+
+
+

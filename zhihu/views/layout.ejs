@@ -1,0 +1,20 @@
+<% include header.ejs%>
+<div id="container" class="container">
+
+    <% if(success) { %>
+    <div class="alert alert-success">
+        <%= success %>
+    </div>
+    <% } %>
+
+    <% if(error) { %>
+    <div class="alert alert-error">
+        <%= error %>
+    </div>
+    <% } %>
+    <%- body %>
+
+
+</div>
+
+<% include footer.ejs%>

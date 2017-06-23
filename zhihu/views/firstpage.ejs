@@ -1,0 +1,195 @@
+<% include navbar.ejs%>
+
+
+<% include askQuestion.ejs%>
+<div id="nocontent">
+
+</div>
+<div id="sidebar">
+    <ul >
+        <li class="listItem">
+            <ul>
+                <li>
+                    <a href>我的收藏</a>
+                </li>
+                <li>
+                    <a href>我关注的问题</a>
+                </li>
+                <li>
+                    <a href>邀请我回答的问题</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="listItem">
+            <ul>
+                <li>
+                    <a href>公共编辑状态</a>
+                </li>
+                <li>
+                    <a href>社区服务中心</a>
+                </li>
+                <li>
+                    <a href>版权服务中心</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="listItem">
+            <ul>
+                <li>
+                    <a href>知乎专栏</a>
+                </li>
+                <li>
+                    <a href>专栏。发现</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="listItem">
+            <ul>
+                <li>
+                    <a href>知乎Live</a>
+                </li>
+                <li>
+                    <a href>财富自由是骗人的吗</a>
+                </li>
+                <li>
+                    <a href>快毕业了，怎样在校招中胜出</a>
+                </li>
+                <li>
+                    <a href>一起批判：人人都是产品经理</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="listItem">
+            <ul>
+                <li>
+                    知乎圆桌 <a href>查看全部</a>
+                </li>
+
+                <li>
+                    <a href>Hi,职场</a>
+                </li>
+
+                <li>
+                    <a href>漫谈机器智能</a>
+                </li>
+                <li>
+                    <a href>烘焙新手课堂</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="listItem">
+            <ul>
+                <li>
+                    <a href="">知乎书店</a>
+                </li>
+
+                <li>
+                    <a href="">员工权益只多少</a>
+                </li>
+
+                <li>
+                    <a href="">黑板报，电灯泡与哈利波特</a>
+                </li>
+
+                <li>
+                    <a href="">刑事辩护指导书</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="listItem">
+            <a href="">下载App</a>
+        </li>
+
+        <li class="listItem">
+            <a href="">刘看山-知乎指南-建议反馈</a>
+        </li>
+
+
+
+
+
+    </ul>
+</div>
+
+<div class="home_entry">
+
+
+            <img class="Avatar" src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+                 srcset="https://pic1.zhimg.com/da8e974dc_l.jpg 2x" alt=<%= user.name %>>
+
+
+        <div class="home_inner_entries">
+            <ul>
+                <li><a href="/">提问a</a></li>
+                <li><a href="/">回答</a></li>
+                <li><a href="/write">写文章</a></li>
+                <li><a href="/draft">草稿</a></li>
+            </ul>
+        </div>
+
+
+</div>
+
+<div class="home_topics">
+
+
+     <span>按已关注的话题阅读：</span>
+     <% for(var subject of user.subjects){ %>
+    <span class="topicname"><a href="/:subject"><%= subject %></a></span>
+
+    <% } %>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+</script>
+
+<div id="questions">
+    <div class="newMoves">
+        <span>最新动态</span>
+    </div>
+    <ul>
+
+        <% for(var question of questions){ %>
+        <li class="questionItem" >
+            <div> <span>来自话题： <%= question.subject %></span> </div>
+            <div >
+                <h4 class="questionTitle"><a href="/questionDetails/q/<%= question.title %>">题目：<%= question.title %></a> </h4>
+                <a href="/questionDetails/q/<%= question.asker %>">提问者：<%= question.asker %></a><br><br>
+
+                <div class="questionDetail">
+                    <a class="questiondesc" href="/questionDetails/q/<%= question.description %>"><%= question.description %></a>
+                </div>
+
+                <div class="readmore"></div>
+
+            </div>
+
+
+            <div class="questionfooter">
+                <span><a>关注问题</a></span>
+                <span><a>条评论</a></span>
+
+                <span class="expandablefooter"><a>感谢</a> <a>分享</a> <a>收藏</a> <a>没有帮助</a> <a>举报</a></span>
+
+
+                <span><a>作者保留权利</a></span>
+
+                <button class="rollup">收起</button>
+
+            </div>
+        </li>
+        <%}%>
+    </ul>
+</div>
+
+

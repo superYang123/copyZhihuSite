@@ -1,0 +1,73 @@
+
+<% include navbar.ejs%>
+
+<div id="questionSection">
+    <div id ='questionTitle'>
+        <p><%= question.title %></p>
+        <p><%= question.description %></p>
+
+    </div>
+    <div id="questionTips">
+        <p>关注者 被浏览</p>
+        <button>关注问题</button>
+        <a href="#editAnswer">写回答</a>
+    </div>
+
+</div>
+
+
+<div id="questionPageSidebar">
+    <div>
+        <img src="" placeHolder="广告"/>
+
+    </div>
+    <div>
+        <p>相关问题</p>
+        <ul>
+            <li>有哪些不起眼却非常挣钱的行业</li>
+            <li>你在大学里是怎么样正道钱的</li>
+        </ul>
+        <p>有哪些不起眼却非常挣钱的行业</p>
+    </div>
+    <div>
+        <p>相关Live推荐</p>
+        <ul>
+            <li>单独主编，一本杂志的诞生</li>
+            <li>单独主编，一本杂志的诞生</li>
+            <li>单独主编，一本杂志的诞生</li>
+        </ul>
+        <div>
+            <p>
+                刘看山，知乎指南知乎协议应用工作联系我们@2017知乎
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div id="answers">
+    <div>
+        <ul>
+            <% if(question.answers){ %>
+            <% for(var answer of question.answers){ %>
+            <li><%= answer.replier %><br><%= answer.content%></li>
+
+            <% } %>
+            <% }%>
+        </ul>
+    </div>
+
+
+
+    <div id="editAnswer">
+        <form action="/answer" method="post">
+            <textarea name="answer"></textarea><br>
+            <input type="submit" value='提交答案'>
+        </form>
+    </div>
+</div>
+
+
+
+
+

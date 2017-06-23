@@ -1,0 +1,58 @@
+<%  if(!user){ %>
+
+  <div class="index-main">
+    <div class="index-main-header">
+      <h1 class="logo hide-text">知乎</h1>
+      <h2 class="subtitle">与世界分享你的知识，经验和见解</h2>
+    </div>
+    <div class="index-main-body">
+
+      <div class="reg-login-form">
+        <form action="/" method="post">
+
+          <lable><input name="regOrLogin" type="radio" id="reg" checked="checked" value="reg">注册</lable>
+          <lable><input name="regOrLogin" type="radio" id="login" value="login">登录</lable>
+          <div class="input-wrapper">
+            <div class="account">
+                  <input id="usernameTr" type="text" name="username" placeholder="姓名">
+            </div>
+            <div class="number" >
+                  <input type="number" name="number" placeholder="手机号码">
+            </div>
+            <div class="password">
+                  <input type="password" name="password" placeholder="密码">
+            </div>
+
+          </div>
+          <div class="submit">
+            <input id="submitButton" type="submit" value="注册知乎">
+          </div>
+        </form>
+        <p>点击注册按钮，即代表你同意<a href=" ">《知乎协议》</a></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div id="footer">
+    <button id="downApkButton">下载知乎App</button>
+    <p>
+      @2017知乎知乎 - 专栏知乎 - 圆桌发现 - 移动应用 - 使用机构账号登录- 联系我们- 来知乎工作
+    </p>
+    <p>
+      京ICP证110745号 - 京公网备11010802010035 - 出版物经营许可证
+    </p>
+  </div>
+
+
+
+<% }else{ %>
+<% include firstpage.ejs %>
+<% } %>
+
+
+

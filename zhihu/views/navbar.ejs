@@ -1,0 +1,59 @@
+<div  class="navigation" class="zu-top" data-za-module="TopNavbar"  >
+
+    <ul class="myul">
+        <li>
+            <a class="font-color-white" href="/"  >知乎</a>
+        </li>
+        <li>
+            <div role="search" id="zh-top-search" class="zu-top-search">
+                <form method="GET" action="/search" id="zh-top-search-form" class="zu-top-search-form">
+                    <input type="hidden" name="type" value="content">
+
+                    <input type="text" name="searchContent" class="zu-top-search-input"
+                           id="q" autocomplete="off" value maxlength="100"
+                           placeholder="搜索你感兴趣的内容..." role="combobox" aria-autocomplete="list">
+                    <button type="submit" class="zu-top-search-button">
+
+                        <span class="hide-text">搜索</span>
+                        <span class="sprite-global-icon-magnifest-dark"></span>
+                    </button>
+                </form>
+            </div>
+        </li>
+        <li >
+            <a class="font-color-white" href="/">首页</a>
+        </li>
+        <li >
+            <a class="font-color-white" href="/discover">发现</a>
+        </li>
+        <li >
+            <a class="font-color-white" href="/news">消息</a>
+        </li>
+        <li>
+            <button onclick="questionPage()" class="zu-top-add-question" id="zu-top-add-question">提问</button>
+        </li>
+
+        <li class="profile-list" onmouseover="this.className='profile-list2'"
+            onmouseout="this.className='profile-list'">
+            <img class="Avatar" src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+                 alt=<%= user.name %>>
+            <span  id='account-name' class="name"><%= user.name %></span>
+            <div class="profile-dropdown" >
+                <a class="font-color-white" href="/people/lalalynnwen"  >
+                    我的主页
+                </a><br/>
+                <a class="font-color-white" href="/inbox"  >
+                    私信
+                </a><br/>
+                <a class="font-color-white" href="/setting"  >
+                    设置
+                </a><br/>
+
+                <a class="font-color-white" href="/logout"  >
+                    退出
+                </a><br/>
+            </div>
+        </li>
+
+    </ul>
+</div>
